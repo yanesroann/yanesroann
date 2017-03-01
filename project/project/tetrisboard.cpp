@@ -1,4 +1,3 @@
-// Final Project
 // tetrisboard.cpp
 // Grace Milton and Roann Yanes
 
