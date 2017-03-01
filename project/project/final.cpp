@@ -97,36 +97,37 @@ int main()
                }
                break;        
          }
-         event = gfx_event_waiting(); // Waits for user input of some kind in the graphics window
-         switch (event) {
-            case 1:
-               command = gfx_wait();   
-               switch (command) {
-                  case 'Q': // Shifts the current piece left when left arrow key pressed
-                     board.moveLeft();
-                     break;
-                  case 'S': // Shifts the current piece right when right arrow key pressed
-                     board.moveRight();
-                     break;
-                  case 'r': // Rotates piece when 'r' pressed
-                     if (open) {
-                        board.rotate(); // Rotates piece
-                        o = board.getOrientation(); // Gets orientation
-                        switch (shape) { // Changes how far piece can fall based on orientation
-                           case 1:
-                              if (o == 1 || o == 3) { bottom = SIZE1 - 1; }
-                              else if (o == 2 || o == 4) { bottom = SIZE1 - 3; }
-                              break;
-                           case 2:
-                           case 3: 
-                           case 6:
-                              if (o == 3) { bottom = SIZE1 - 1; }
-                              else { bottom = SIZE1 - 2; }
-                              break;
-                           case 5:
-                           case 7:
-                              bottom = SIZE1 - 2;
-                              break;
+         while (gfx_event_waiting()){
+            event = gfx_event_waiting(); // Waits for user input of some kind in the graphics window
+            switch (event) {
+               case 1:
+                  command = gfx_wait();   
+                  switch (command) {
+                     case 'Q': // Shifts the current piece left when left arrow key pressed
+                       board.moveLeft();
+                       break;
+                    case 'S': // Shifts the current piece right when right arrow key pressed
+                       board.moveRight();
+                       break;
+                    case 'r': // Rotates piece when 'r' pressed
+                       if (open) {
+                          board.rotate(); // Rotates piece
+                          o = board.getOrientation(); // Gets orientation
+                          switch (shape) { // Changes how far piece can fall based on orientation
+                             case 1:
+                                if (o == 1 || o == 3) { bottom = SIZE1 - 1; }
+                                else if (o == 2 || o == 4) { bottom = SIZE1 - 3; }
+                                break;
+                             case 2:
+                             case 3: 
+                             case 6:
+                                if (o == 3) { bottom = SIZE1 - 1; }
+                                else { bottom = SIZE1 - 2; }
+                                break;
+                             case 5:
+                             case 7:
+                                bottom = SIZE1 - 2;
+                                break;
                         }
                      }
                      break;
@@ -142,6 +143,7 @@ int main()
                junk = gfx_wait(); // Makes sure unwanted inputs don't queue up
                break; 
          }
+       }
       }
    }
    return 0;
