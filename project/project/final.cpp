@@ -1,5 +1,3 @@
-// Final Project
-// final.cpp
 // Grace Milton and Roann Yanes
 
 #include <iostream>
@@ -31,7 +29,7 @@ int main()
       gfx_color(0,255,255);
       gfx_fill_rectangle(300,0,5,600); // Draws cyan barrier between board and right side of window
       title(); // displays "TETRIS"
-      gfx_text(330,260, "Brought to you by G$ and the Cicada Menace!"); // Displays text
+      gfx_text(330,260, "Brought to you by Grace Milton and the Roann Yanes!"); // Displays text
       gfx_color(255,0,0);
       // Displays instructions
       gfx_text(370,310, "Press left arrow to move left");
