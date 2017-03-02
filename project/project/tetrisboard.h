@@ -26,7 +26,7 @@ class Tetrisboard {
      void setEndgame(bool); // Sets boolean value to true when game over
 
      // utility methods
-     void initialize(); // Initializes arrays for game play and color tracker
+     void initialize(); // Initializes the arrays for game play and color tracker
      void drawLines(); // Draws evenly spaced lines on board
      void displayArray(); // Displays array of Tetris board in terminal (useful for testing code)
      void addblock(int, int); // Adds a new Tetris piece to the board

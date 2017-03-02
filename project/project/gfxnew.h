@@ -6,7 +6,7 @@
 #include <X11/Xlib.h>
 #include <X11/cursorfont.h> 
 
-// Open a new graphics window. 
+// Open a new graphics window 
 void gfx_open( int width, int height, const char *title );
 
 // Flush all previous output to the window. 

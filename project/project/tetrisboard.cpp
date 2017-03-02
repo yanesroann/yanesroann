@@ -31,7 +31,7 @@ int Tetrisboard::getBlue() // Returns B value of color
 int Tetrisboard::getShape() // Returns number 1-7 corresponding to shape of current piece 
 { return shape; }
 
-int Tetrisboard::getOrientation() // Returns number 1-4 corresponding to orientation of current piece
+int Tetrisboard::getOrientation() // Returns one number 1-4 corresponding to orientation of current piece
 { return orientation; }
 
 bool Tetrisboard::getEndgame() // Returns true boolean value when game over
