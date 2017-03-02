@@ -1,3 +1,4 @@
+// final.cpp
 // Grace Milton and Roann Yanes
 
 #include <iostream>
@@ -29,7 +30,7 @@ int main()
       gfx_color(0,255,255);
       gfx_fill_rectangle(300,0,5,600); // Draws cyan barrier between board and right side of window
       title(); // displays "TETRIS"
-      gfx_text(330,260, "Brought to you by Grace Milton and the Roann Yanes!"); // Displays text
+      gfx_text(330,260, "Brought to you by Grace Milton and Roann Yanes!"); // Displays text
       gfx_color(255,0,0);
       // Displays instructions
       gfx_text(370,310, "Press left arrow to move left");
@@ -60,7 +61,7 @@ int main()
          check = board.checkbelow(); // Checks if there is a piece below current piece
          if (check) { 
             // Checks if row needs to be cleared four times (max amount of rows that can be cleared at once)
-            for (int i = 0; i < 4; i++) {
+             for (int i = 0; i < 4; i++) {
                board.clearLine();
             }
             end = board.getEndgame(); // Checks if game over
@@ -97,53 +98,53 @@ int main()
                }
                break;        
          }
-         while (gfx_event_waiting()){
+         while (gfx_event_waiting()) {
             event = gfx_event_waiting(); // Waits for user input of some kind in the graphics window
             switch (event) {
                case 1:
                   command = gfx_wait();   
                   switch (command) {
                      case 'Q': // Shifts the current piece left when left arrow key pressed
-                       board.moveLeft();
-                       break;
-                    case 'S': // Shifts the current piece right when right arrow key pressed
-                       board.moveRight();
-                       break;
-                    case 'r': // Rotates piece when 'r' pressed
-                       if (open) {
-                          board.rotate(); // Rotates piece
-                          o = board.getOrientation(); // Gets orientation
-                          switch (shape) { // Changes how far piece can fall based on orientation
-                             case 1:
-                                if (o == 1 || o == 3) { bottom = SIZE1 - 1; }
-                                else if (o == 2 || o == 4) { bottom = SIZE1 - 3; }
-                                break;
-                             case 2:
-                             case 3: 
-                             case 6:
-                                if (o == 3) { bottom = SIZE1 - 1; }
-                                else { bottom = SIZE1 - 2; }
-                                break;
-                             case 5:
-                             case 7:
-                                bottom = SIZE1 - 2;
-                                break;
+                        board.moveLeft();
+                        break;
+                     case 'S': // Shifts the current piece right when right arrow key pressed
+                        board.moveRight();
+                        break;
+                     case 'r': // Rotates piece when 'r' pressed
+                        if (open) {
+                           board.rotate(); // Rotates piece
+                           o = board.getOrientation(); // Gets orientation
+                           switch (shape) { // Changes how far piece can fall based on orientation
+                              case 1:
+                                 if (o == 1 || o == 3) { bottom = SIZE1 - 1; }
+                                 else if (o == 2 || o == 4) { bottom = SIZE1 - 3; }
+                                 break;
+                              case 2:
+                              case 3: 
+                              case 6:
+                                 if (o == 3) { bottom = SIZE1 - 1; }
+                                 else { bottom = SIZE1 - 2; }
+                                 break;
+                              case 5:
+                              case 7:
+                                 bottom = SIZE1 - 2;
+                                 break;
+                           }
                         }
-                     }
-                     break;
-                  case 'q': // Quits when 'q' is pressed
-                     run = false; // Exits while loop
-                     break;
-               }
-               break;
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-               junk = gfx_wait(); // Makes sure unwanted inputs don't queue up
-               break; 
+                        break;
+                     case 'q': // Quits when 'q' is pressed
+                        run = false; // Exits while loop
+                        break;
+                  }
+                  break;
+               case 2:
+               case 3:
+               case 4:
+               case 5:
+                  junk = gfx_wait(); // Makes sure unwanted inputs don't queue up
+                  break; 
+            }
          }
-       }
       }
    }
    return 0;
@@ -156,12 +157,12 @@ void title()
    gfx_color(255,0,0);
    XPoint letter1[] = {{315,200}, {360,200}, {360,215}, {345,215}, {345,245},{330,245},{330,215},{315,215}};
    gfx_fill_polygon(letter1,8);
-   // E
-   gfx_color(255,128,0);
+  // E
+  gfx_color(255,128,0);
    XPoint letter2[] = {{360,200}, {405,200}, {405,215}, {375,215}, {375,220}, {390,220}, {390,225},{375,225},{375,230},{405,230},{405,245},{360,245}};
    gfx_fill_polygon(letter2,12);
    // T
-   gfx_color(255,255,0);
+    gfx_color(255,255,0);
    XPoint letter3[] = {{405,200}, {450,200}, {450,215}, {435,215}, {435,245},{420,245},{420,215},{405,215}};
    gfx_fill_polygon(letter3,8);
    // R
