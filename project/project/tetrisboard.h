@@ -1,4 +1,3 @@
-// Final Project
 // tetrisboard.h
 // Grace Milton and Roann Yanes
 

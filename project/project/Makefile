@@ -1,4 +1,3 @@
-# Final Project
 # Grace Milton and Roann Yanes
 
 CMP = g++ -std=c++11 -lX11
