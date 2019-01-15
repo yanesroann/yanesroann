@@ -1,0 +1,69 @@
+Program: report.txt 
+Author: Roann Yanes
+
+***** Part 2: Documentation *****
+
+** HOW questionnaire.py WORKS INTERNALLY**
+
+My program (questionnaire.py) is a python program that asks the user for input to (eventually) create a personalized Netflix playlist/schedule for the user. The program begins by declaring the global variables that are used in the main execution portion of the program. The global variables are the questions that are displayed to the user, the variables that store the the user's responses to the questions, and the variable that changes the color of the output in the terminal. In the main execution of the program, the questions are displayed to the user and the user is asked for input, which is then saved to the corresponding global variable (using the raw_input function). ASCII art is displayed to the user, and a formatted summary of the user's responses is also displayed to the user in the terminal in blue text (which I accomplished by printing ANSI escape sequences). I submitted my work to our GitHub repository. (I wanted to submit the work I completed in JavaScript (because I spent the most time on it), but it would not compile on the student machines, but it worked locally.)
+** TIME LOG **
+
+|------------------------------------------------------------|
+| Date |       What I Accomplished           | Elapsed Time  |
+|------|-------------------------------------|---------------|
+| 3/15 | I spent this time researching how   |   1 hour &    |
+|      | the output of our program should be |  15 minutes   |
+|      | formatted, and what APIs existed.   |               |
+|------------------------------------------------------------|
+| 3/16 | I spent this time completing        |   3.5 hours   |
+|      | Codecademy tutorials on JavaScript  |               |
+|      | and attempting to run a program     |               |
+|      | I wrote in JavaScript in this       |               |
+|      | terminal (see details below).       |               |
+|------------------------------------------------------------|
+| 3/17 | I spent this time researching       |   2.5 hours   |
+|      | certain capabilities of Python      |               |
+|      | (see details above and below) and   |               |
+|      | writing my executable code.         |               |
+|------------------------------------------------------------|
+
+***** Part 3: What I Learned ***** (Directly from rubric)
+
+DETERMINE HOW THE OUTPUT OF THE PROGRAM SHOULD BE FORMATTED:
+
+In order to create a Google extension, the very first thing we'll need to create is a file named manifest.json (which is a metadata file in JSON format) that declares to Chrome what the extension is going to do, and what permissions it requires in order to do those things. The extension would need to be coded in JavaScript. This seems like our best option because we would like our project to interact with the Netflix website so that the playlist could update in real-time according to the user's preferences and Netflix watching habits. We would have our project appear directly on the Netflix website (as a Chrome extension), and it would be interactive and update in real-time, as it would interact with Netflix directly.
+
+It is possible to create an instant python web browser using the command "python -m SimpleHTTPServer" which will publish the current directory as a web server immediately, and if there is an index.html file in the directory, it will be displayed immediately, so we may have to save our output to an index.html file, but that would cause us to lose the aspect that would update the playlist in real-time, but it may give us more control over how we would like our final product to look.
+
+The other formats for outputting our final project that I looked into included creating a phone app, saving the output from the command line to a PDF (which would make us lose the interactive aspect), or printing directly to the terminal (which does not look appealing). I realized that creating a phone app would require us to learn a lot about a software that we do not have much experience with (which would take away time from the actual implementation of our project). Saving the output to a PDF (with LaTeX) would cause us to lose the aspect that would update the playlist in real-time, and printing the output directly to the terminal would also cause us to lose that "real-time" aspect; it is also slightly challenging to format the output in terminal the way we want.
+
+PRACTICE AND LEARN PROGRAMMING LANGUAGES OTHER THAN C++:
+
+I discovered that Python is very good at extracting JSON data, and that you can change the colors of the text in terminal. There is also a 'pygame' library that we may end up using to create our questionnaire and/or our final product because it gives us a lot of creative control (and it would make our final product look really nice). I also played around with the 'pygames' library on my local machine, and there are a lot of features in the library that may prove useful to us in the long run. I played around with extracting JSON data in Python (with the NEtflix Roulette API), and made a practice executable code to do this. I ended up creating my executable code in Python (which is the questionnaire that we will use to personalize the Netflix schedule creator to the user (see above)).
+
+I tried to write and implement a JavaScript program called questionnaire.js, but I could not run the program at the command line because I needed node.js. I attempted to download, unzip, and install the source code for node.js, but, while installing, I received an error message that I did not have access to "bin/usr/node". It seems that JavaScript would be the best to create a Chrome extension, and this is what we are currently leaning towards. (I did use an online complier to check the output of my questionnaire.js and was extremely satisfied with it. I also completed the majority of the tutorials on Codecademy about JavaScript, as well.).
+
+RESEARCH APIs:
+
+I have discovered that the "official" Netflix public API was removed in 2014. There is an alternative API called Netflix Roulette, which I played around with by installing the python wrapper with 'pip install NetflixRouletteAPI'; this allowed me to return JSON objects more easily and efficiently (as the API did most of the work). The API is not really up to date with all of the newer shows on Netflix, which may prove problem problematic.
+
+The IMDb API may prove more beneficial (as it is up-to-date), but it would not be true to what TV shows/movies Netflix has. The API (called OMDb) does return JSON objects, so we most likely will use Python for our project. 
+
+USER INPUT: (The following are the questions for the questionnaire to get user input which will help determine what should be in the playlist.)
+
+~ Please enter a name or a nickname.
+~ What movie/TV show genre do you prefer?
+~ Please rank the following as most to least important:
+	~ Mood
+	~ Genre
+	~ Time constraint
+~ What emotion are you feeling right now?
+~ How many hours a day would you like to watch Netflix?
+~ What days would you like to watch Netflix?
+
+REPOSITORY: (The following is our repository and my personal GitHub account, respectively.)
+
+* https://github.com/gmilton/DataStructuresProject
+* https://github.com/yanesroann
+
+Overall, I really enjoyed this lab, as it gave me the opportunity to explore Python and JavaScript. I am most excited about making a Google Chrome extension, but I would also love to play around with the 'pygames' library a little more (the problem is that I cannot install 'pygames' on the student machines). I would like to know how to install libraries (or other things) on the student machines. 

@@ -1,0 +1,21 @@
+Roann Yanes (NetID: ryanes)
+CSE 30264 -- Computer Networks
+Programming Assignment 1 - Simple UDP Program
+September 17, 2018
+
+The files that are present in the program1 directory are:
+udpclient.c -- this program contains the code to run the client
+udpserver.c -- this program contains the code to run the server
+pg1lib.h -- this is the library that contains the encryption methods
+Makefile -- this is the Makefile that compiles the UDP Program code
+
+In order to compile the code, run the `make` command.
+(You can also run `make clean` to remove the object files.)
+
+Here is a command line example to test the code with a file and an input string:
+` Server 
+  [ryanes@student02 ~] $ ./udpserver 41050
+  
+  Client
+  [ryanes@student00 ~] $ ./udpclient student02.cse.nd.edu 41050 /afs/nd.edu/coursefa.18/cse/cse30264.01/files/program1/File1.txt
+  [ryanes@student00 ~] $ ./udpclient student02.cse.nd.edu 41050 "This is a test"`

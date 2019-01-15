@@ -1,0 +1,17 @@
+	My program for the Formula Calculator portion of the lab is meant to calculate two roots (also referred to as solutions) to a quadratic equation (ax^2 + bx + c).
+From the user's perspective, the program is a quadratic formula (-b +/- (sqrt(b^2 - 4*a*c))/(2*a)) calculator and displays two solutions to a quadratic 
+equation after the user inputs values for 'a','b', and 'c'. The user can input the 'a', 'b', and 'c' values of a particular quadratic equation and can expect
+to receive two x-values.
+
+	From the programmer's perspective, the program is structured in a way that, first, declares the variables that the user will input ('a','b', and 'c') as
+non-integer values(in order to make the solutions a little more accurate, as some solutions to quadratic equations are not integers), and declares the solution values
+('root1','root2') as float values as well. These values are all initialized to zero. The 'square' and 'root' values are also declared as float and initialized to zero as
+they are used in the actual calculation portion of the quadratic formula. The program then has lines of code that display statements to the user commanding
+the user to input values for 'a', 'b', and 'c' and stores those values. After, the program utilizes those stored values for 'a', 'b', and 'c' to calculate the square
+of b ('square' in the program), the value that is under the square root ('root'), and, finally, the two solutions to the quadratic equation ('root1','root2')
+using the quadratic formula, 'square', and 'root'.  Finally, there exist two statements in the code that display 'root1' and 'root2' to the user.
+
+	In order to make sure that my program was correct, I input similar values of 'a', 'b', and 'c' into my program and a quadratic formula calculator from WolframAlpha
+to see if I received the same solutions for 'root1' and 'root2' as WolframAlpha did.  I repeated this process several times with a combination of different values for
+'a', 'b', and 'c'. It appears that the program does produce correct results, as my program consistently produced the same solutions as the WolframAlpha calculator.
+However, the program does display '-nan' for values of 'a', 'b', and 'c' that produce imaginary solutions. 

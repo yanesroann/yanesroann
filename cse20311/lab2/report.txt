@@ -1,0 +1,35 @@
+	My program for the third part of the lab generates an ASCII Art graph of the
+function y=(6*(sin(2x)+cos(x)+2) from x=0 to x=20. From the user's 
+perspective, the graph is displayed with both the X-axis and Y-axis running
+vertically down the screen with the range of x being from zero to twenty.
+Each line underneath the headings "X" and "Y"  displays the X-values and Y-values
+of the function (coordinates of the function) respectively. A bar of pound signs that 
+corresponds in length to the Y-values is displayed to the right of 
+these X-values and Y-values. At the end of the graph, the coordinates of the
+minimum and maximum for that particular range of the function are displayed.
+
+	Internally, the program begins by declaring and initializing the variables
+that are to be utilized throughout the program as either float or int values.
+The program then displays what function the program will 
+output(y=(6*(sin(2x))+cos(x)+2) and sets up the columns in which the X-values and
+Y-values will be displayed by outputting "X" and "Y" as headings. The actual graphing of
+the function begins by setting the "ymin" value equal to (6*(sin(2*0)+cos(0)+2) to see 
+if the minimum value of y occurs when x is equal to zero.  Then, a for loop is used to
+begin creating the x-values that will be displayed under the "X" column. This for loop
+begins at zero and ends at twenty and causes the x-values to increase by 0.20 after each
+iteration (by setting x=j*0.2). The for loop also sets the y-values equal to the function
+where the x-values that are put into the function range from zero to twenty and increase
+by 0.2 with every iteration. The result of setting the "y" equal to the function is
+displayed in the "Y" column as the y-values. Another for loop is nested inside the original
+for loop to display the bar graph of pound signs using the rounded y-values. The bar graph
+of pound signs is proportional to the rounded y-values ("yrounded"). In the for loop, if 
+statements are also placed to ensure that during each iteration of the for loop, the 
+program checks to see if the y-value during that iteration is greater than or less than 
+the "ymax" or the "ymin" values, respectively, and proceeds to set the y-value and the x-value 
+as the new "xmin", "xmax", "ymin", and "ymax" values if the if statements are true. This happens
+for the duration of the range (from x=0 to 20). Finally, the program outputs the maximum and
+minimum values of the function over that range in a statement to the user.    
+
+	I verified my results by inputting my function into WolframAlpha to compare 
+what the graph of the function looks like over that range. I also used WolframAlpha
+to verify that the minimum and maximum values of my program were correct. 

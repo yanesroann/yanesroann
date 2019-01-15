@@ -1,0 +1,7 @@
+Rational Rational::add(Rational x)
+{
+Rational z;
+z.numer = numer * x.getDenom() + denom * x.getNumer()
+z.denom = 
+return z;
+}

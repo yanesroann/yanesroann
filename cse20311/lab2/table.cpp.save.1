@@ -1,0 +1,40 @@
+/* Asks the user for the size of the table on the X and Y axes, then displays a
+ exactly that big */
+ 
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+//function main begins program execution
+	int main() {
+
+// declare and initialize variables
+int x=0;
+int y=0;
+int i=0;
+int j=0;
+cout << "Enter the size of the matrix (x-value): ";
+cin >> x;
+
+cout << "Enter the size of the matrix (y-value): ";
+cin >> y;
+
+// begin integer multiplication table
+
+for (i=0; i<=y; i++) {
+	if (i==0) {
+		cout << "*";
+		}
+		
+	else if (i==1) { 
+	cout <<i ;
+	}
+	for (j=1; j<=x; j++) {
+		cout <<j<< " " ;
+	}
+	cout <<endl;
+	}
+}
+
+
+

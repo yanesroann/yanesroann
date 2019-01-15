@@ -1,0 +1,9 @@
+
+grep -i 'load  ' profile.txt
+grep -i 'store  ' profile.txt
+grep -i 'uncond branch   ' profile.txt
+grep -i 'cond branch  ' profile.txt
+grep -i 'int computation  ' profile.txt
+grep -i 'fp computation  ' profile.txt
+grep -i 'trap  ' profile.txt
+grep -i 'sim_inst_class_prof.total' profile.txt

@@ -1,0 +1,50 @@
+Program: report.txt
+Author: Roann Yanes
+
+From the user's perspective, the TreapMap class can be used to create a treap by calling the methods that were created in the TreapMap class implementation.
+
+As can be seen, the existing code files relate to each other because all of the classes (unsorted map, sorted map, binary search tree, red-black tree, and treap) inherit from the Map class. This means that the public methods in the Map class (the base class) are accessible to the derived classes. All of these classes also make use of the DumpFlag enumeration (for their dump functions). Seeing as all of these data structures are all maps, it makes sense for these classes to inherit from the Map base class. All of the classes had insert(), search(), and dump() (which were thefunctions that had different implementations based on the map that was being implemented. Because a treap is a randomized binary search tree, both classes make use of the Node struct, and I pretty much reused the code for insert() that was implemented in the BST class and just added the priorities when creating a new node. I also reused the search() and dump() functions verbatim from the BST implementation (seeing as a treap is a randomized binary search tree). Also, a red-black tree is self-balancing binary search tree, so it would make sense that a lot of the code for a binary search tree can be used.  
+
+From the programmer's perspective, to implement my treap, I used internal functions to implement the methods. To implement the search() and dump() functions for treap, I just called `extern` on the `search_r()` and `dump_r()` functions from the BST implementation to reuse that code, and just called those functions in the treap methods. I reused the majority of the code from the BST implementation for the `insert()` function, but then added the priorities (by calling the random number generator function (that was provided to us)) when creating a new node, and I also added a few more if statements in the `insert_Treap()` internal function to check if the heap property is violated and fixes it if it is by using the `rotate_right()` and `rotate_left()` internal functions which rotates the right and left subtrees respectively. I also created an internal `get_Max_Height()` function that checked and computed the maximum depths of the right and left subtrees recursively, and then compared the two depths and returned the larger of the two. I also created an internal `get_Max_Height()` function that checked and computed the minimum depths of the right and left subtrees recursively, and then compared the two depths and returned the smaller of the two. I also created a `pre_order()` traversal function that prints out the key, and then recursively calls the function on the right and left subtrees while the root is not NULL.
+
+Below are my benchmarking results:
+As expected, my treap does not perform better than the red-black tree, and it performs only slightly better than the binary search tree (truthfully, the treap benchmarking results are pretty much the same as the binary search tree results). The pre-order traversal results of the treap trials can also be written as pre-order binary search trees (which is expected). 
+
+Testing BST Map (Correctness)...
+Testing BST Map (Memory)...
+Testing Treap Map (Correctness)...
+-- Trial 1 --
+Map Balance ratio for 100 entries is: 0.333333 with min height: 5 and max height:
+Treap of size 10, pre-order traversal : 3 1 0 2 4 5 7 6 9 8 
+-- Trial 2 --
+Map Balance ratio for 100 entries is: 0.266667 with min height: 4 and max height:
+Treap of size 10, pre-order traversal : 2 1 0 7 3 5 4 6 9 8 
+-- Trial 3 --
+Map Balance ratio for 100 entries is: 0.416667 with min height: 5 and max height:
+Treap of size 10, pre-order traversal : 4 2 1 0 3 8 5 7 6 9
+-- Trial 4 --
+Map Balance ratio for 100 entries is: 0.384615 with min height: 5 and max height:
+Treap of size 10, pre-order traversal : 7 6 1 0 2 3 5 4 9 8 
+-- Trial 5 --
+Map Balance ratio for 100 entries is: 0.153846 with min height: 2 and max height:
+Treap of size 10, pre-order traversal : 0 2 1 7 4 3 5 6 9 8
+Testing Treap Map (Memory)...
+g++  -o map_bench map_bench.o libmap.a
+Benchmarking for n = 30,000 ...
+== Unsorted ==
+Insert: 31.837 s
+Search: 30.707 s
+== Sorted ==
+Insert: 41.34 s
+Search: 0.06343 s
+== BST ==
+Insert: 32.952 s
+Search: 29.092 s
+== RBTree ==
+Insert: 0.067462 s
+Search: 0.044975 s
+== Treap ==
+Insert: 31.81 s
+Search: 30.799 s
+
+My treap implementation passed the map_bench and map_test test, and I verified (by hand and by running the results through an online binary search tree checker) that the pre-order traversals were correct.  

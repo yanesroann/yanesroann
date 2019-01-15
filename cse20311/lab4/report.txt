@@ -1,0 +1,43 @@
+Program: report.txt
+Author: Roann Yanes
+
+	My program for the third part of the lab, from the user's perspective, provides the user with a menu of questions pertaining to Notre Dame football's win/loss
+record and allows the user to choose what option (regarding the win/loss record) he/she would like to view. The user is faced with six options. Option one allows the
+user to view the record for a year the user inputs and displays those years in a vertical list. Option two allows the user to view the years with a certain number 
+of losses; the user is also asked to input the number of losses after selecting option two. The years are displayed in a vertical list. Option three allows the 
+user to view the years with a certain number of wins; the user is also asked to input the number of wins after selecting option three, and, again, the years are
+displayed in a vertical list.  Option four allows the user to view the years with more wins than losses, and option five allows the user to view the years
+with more losses than wins and displays the years in a vertical list.  Option six allows the user to exit the program, as the program keeps running until the user 
+decides to input the correct command to exit.
+    
+    Internally, the program begins by declaring and initializing the variables that the user will (eventually) define, as integers. Then, the program displays the
+menu with the six options (described above in the previous paragraph) to the user, and prompts the user to enter a choice (which is then stored in a 
+variable called "choice"), and enters the while loop if the choice does not equal to 6 (which is the command to exit). If the user does not enter a number between 1 
+and 6, an error message is displayed and the program ends. In the while loop, there are if statements for every option the user can choose. The first if statement 
+corresponds to option one and asks the user to input a year and displays the records for that year. This calculation is completed by a void function 
+(called "givenyear") that takes the year the user inputs and subtracts it from 1900, and then, takes that difference and enters it in the "wins" array and the 
+"losses" arrays to find the elements (numbers of wins and losses) that correspond to that year. There is also an if statement within that if statement that asks the 
+user to input a year from 1900 on if he/she inputs a year before 1900. The if statement that corresponds to option two prompts the user to input the minimum 
+number of losses and displays the years with losses greater than or equal to the number the user inputs; within that if statement is another if statement that prompts
+the user to enter a valid input if he/she enters a negative number for the minimum number of losses. The calculation for option two is completed by 
+a function called "lossesfunction" that contains a for loop that runs through the entire "losses" array and looks for elements that are greater than or equal to 
+the number the user inputs (this is completed by an if statement). If the element of the array meets the conditions described above, that iteration of the for loop
+plus 1900 is displayed, as this is the year. Similarly, there exists another if statement that corresponds to option three and prompts the user to input the minimum 
+number of wins and displays the years with wins greater than or equal to the number the user inputs; within that if statement is another if statement that prompts
+the user to enter a valid input if he/she enters a negative number for the minimum number of wins. The calculation for option three is completed by 
+a function called "winfunction" that contains a for loop that runs through the entire "wins" array and looks for elements that are greater than or equal to 
+the number the user inputs (this is completed by an if statement). If the element of the array meets the conditions described above, that iteration of the for loop
+plus 1900 is displayed, as this is the year. The if statement that corresponds to option four lists all the years with more wins than losses and contains a for loop
+that runs through the entire "wins" and "losses" arrays and compares their elements (this is completed by an if statement). If the element of the "wins" array is
+greater than the element of the corresponding "losses" array, the iteration plus 1900 is displayed, as that is the year. Similarly, the if statement that 
+corresponds to option five lists all the years with more losses than wins and contains a for loop that runs through the entire "wins" and "losses" arrays and compares
+their elements (this is completed by an if statement). If the element of the "losses" array is greater than the corresponding element of the "wins" array, the 
+iteration plus 1900 is displayed, as that is the year. The if statement for option six just contains return zero to end the program, and the end of the while loop
+contains the menu that is displayed to the user at the beginning of the program because the user can keep selecting options until he/she decides to exit the 
+program.          
+     
+     In order to evaluate the program for correctness, I input a combination of numbers and years in the first three options of my program and checked the Wikipedia
+page for Notre Dame football to ensure that the years my program was outputting for those options were correct, and indeed, they were. I also ran options three 
+and four several times to ensure that the years my program was outputting for those two options were correct, and indeed, they were 
+(I also checked the Notre Dame football Wikipedia page). I also input incorrect values into the options to see if the error messages were working properly.  
+

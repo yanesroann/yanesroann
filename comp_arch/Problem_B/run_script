@@ -1,0 +1,1 @@
+sim-profile -all -redir:sim profile.txt fib_rec
