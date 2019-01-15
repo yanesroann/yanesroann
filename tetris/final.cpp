@@ -76,7 +76,7 @@ int main()
             break; 
          }       
          board.fall(); // Makes piece fall
-         usleep(160000); // Pauses
+         usleep(200000); // Pauses
          board.drawLines(); // Draws lines on screen
          if (i == bottom - 1) { // Also checks if row needs to be cleared if piece reaches bottom boundary
             for (int i = 0; i < 4; i++) {
